@@ -10,7 +10,6 @@ def jogar():
     palavra_secreta = "banana"
     letras_acertadas = ["_","_","_","_","_","_"]
 
-
     enforcou = False
     acertou = False
     erros = 0 
