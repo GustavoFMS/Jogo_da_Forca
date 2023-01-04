@@ -7,7 +7,7 @@ def jogar():
     print(bem_vindo.center(40))
     print("*"*40)
 
-    palavra_secreta = "banana"
+    palavra_secreta = "banana".upper()
     letras_acertadas = ["_","_","_","_","_","_"]
 
     enforcou = False
@@ -18,19 +18,23 @@ def jogar():
 
     while(not enforcou and not acertou):
         chute = input("Informe a letra: ")
-        chute = chute.strip()
+        chute = chute.strip().upper()
 
         if (chute in palavra_secreta):
             index = 0
             for letra in palavra_secreta:
-                if (chute.upper() == letra.upper()):
+                if (chute == letra):
                     letras_acertadas[index] = letra
                 index += 1
         else:
-            erros =+ 1
+            erros = erros + 1
 
-        enforcou = erros = 6 
+        enforcou = erros == 6 
+        acertou = '_' not in letras_acertadas
         print(letras_acertadas)
-
+    if (acertou):
+        print("Voce ganhou!!")
+    else: 
+        print("Voce perdeu :(")
 if (__name__ == "__main__"):
     jogar()
